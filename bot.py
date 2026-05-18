@@ -186,22 +186,7 @@ def check_usdt(call):
     else:
         bot.answer_callback_query(call.id, "⏳ Оплата ещё не поступила", show_alert=True)
 
-@bot.callback_query_handler(func=lambda c: c.data.startswith("pay_stars_"))
-def pay_stars(call):
-    tariff = call.data.split("_")[2]
-    t = TARIFFS[tariff]
-    
-    prices = [telebot.types.LabeledPrice(label=t['name'], amount=t['price'])]
-    bot.send_invoice(
-        call.message.chat.id,
-        title="Подписка на софт",
-        description=f"Тариф: {t['name']} ({t['days']} дней)",
-        invoice_payload=f"sub_{tariff}_{call.from_user.id}",
-        provider_token="",
-        currency="XTR",
-        prices=prices
-    )
-    bot.answer_callback_query(call.id)
+
 
 @bot.pre_checkout_query_handler(func=lambda query: True)
 def checkout(query):
