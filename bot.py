@@ -16,7 +16,7 @@ class S(BaseHTTPRequestHandler):
 threading.Thread(target=lambda: HTTPServer(('0.0.0.0', 10000), S).serve_forever(), daemon=True).start()
 
 TOKEN = "8954970328:AAGVi8z1xqTxXKq_AY3vLJMCq6Vtu3Cnu5M"
-ADMIN_ID = 7984990535
+ADMIN_ID = 7669702715
 SUPPORT_USER = "@dwnside"
 CRYPTO_TOKEN = "583888:AAheLph41DdguI1SAGqMQ59HeeM9pmOZww4"
 CRYPTO_API = "https://pay.crypt.bot/api"
