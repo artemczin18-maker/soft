@@ -191,7 +191,7 @@ def pay_stars(call):
     tariff = call.data.split("_")[2]
     t = TARIFFS[tariff]
     
-    prices = [telebot.types.LabeledPrice(label=t['name'], amount=t['price'] * 100)]
+    prices = [telebot.types.LabeledPrice(label=t['name'], amount=t['price'])]
     bot.send_invoice(
         call.message.chat.id,
         title="Подписка на софт",
